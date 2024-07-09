@@ -4,6 +4,7 @@
 
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
+		"dbaeumer.vscode-eslint",
 		"HTMLHint.vscode-htmlhint",
 		"formulahendry.auto-rename-tag",
 		"esbenp.prettier-vscode",

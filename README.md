@@ -45,6 +45,11 @@ Afegir el connector al fitxer [.prettierrc.json](.prettierrc.json)
 | ELEMENT.NOM | Crear un ELEMENT (div, h1, p, ...) amb la classe NOM |
 | ELEMENT#ID | Crear un ELEMENT (div, h1, p, ...) amb l'identificador ID |
 
+## ESLint
+```
+npm init @eslint/config@latest
+```
+
 ## Dreceres de VS Code
 | Drecera | Acció |
 | ------- | ----- |

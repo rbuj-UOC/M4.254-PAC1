@@ -21,7 +21,7 @@ function showSuccess(input) {
 
 // Check email is valid
 function checkEmail(input) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (re.test(input.value.trim())) {
     showSuccess(input);
   } else {
@@ -55,7 +55,7 @@ function checkPasswordCharacters(input) {
   const reLowerCase = /[a-z]/g;
   const reUpperCase = /[A-Z]/g;
   const reDigit = /[0-9]/g;
-  const reSymbols = /[`~!@#$%^&*)(}{\][<>"'\|\\?+=,.:;_-]/g;
+  const reSymbols = /[`~!@#$%^&*)(}{\][<>"'|\\?+=,.:;_-]/g;
   let count = input.value.match(reSymbols);
   if (count === undefined || count === null || count.length === 0) {
     showError(input, `${getFieldName(input)} must contain one symbol`);
