@@ -1,3 +1,10 @@
+# Exercicis pràctics
+| Carpeta | Descripció | Demo |
+| ------- | ---------- | ---- |
+| [PAC1_Ex2_1](PAC1_Ex2_1) | Form Validator | [demo](https://codepen.io/rbuj/pen/dyBPyWN) |
+| [PAC1_Ex2_2](PAC1_Ex2_2) | Exchange Rate Calculator | [demo](https://codepen.io/rbuj/pen/vYqEYWJ) |
+| [PAC1_Ex2_3](PAC1_Ex2_3) | Movie Seat Booking | [demo](https://codepen.io/rbuj/pen/xxobxpV) |
+
 # VS Code
 ## Afegir les extensions recomanades a VS Code
 1. Obrir la línia d'ordres a VS Code, en macOS: ⌘⇧P
@@ -10,6 +17,7 @@
    - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
    - [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
    - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Configuració de Prettier
 1. Obrir les preferències de l'espai de treball a VS Code, en macOS: ⌘,
