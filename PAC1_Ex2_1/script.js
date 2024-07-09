@@ -3,7 +3,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-const age = document.getElementById("age");
+const age = document.getElementById('age');
 
 // Show input error message
 function showError(input, message) {
@@ -43,15 +43,9 @@ function checkRequired(inputArr) {
 // Check input length
 function checkLength(input, min, max) {
   if (input.value.length < min) {
-    showError(
-      input,
-      `${getFieldName(input)} must be at least ${min} characters`
-    );
+    showError(input, `${getFieldName(input)} must be at least ${min} characters`);
   } else if (input.value.length > max) {
-    showError(
-      input,
-      `${getFieldName(input)} must be less than ${max} characters`
-    );
+    showError(input, `${getFieldName(input)} must be less than ${max} characters`);
   } else {
     showSuccess(input);
   }
@@ -69,18 +63,12 @@ function checkPasswordCharacters(input) {
   }
   count = input.value.match(reLowerCase);
   if (count === undefined || count === null || count.length === 0) {
-    showError(
-      input,
-      `${getFieldName(input)} must contain one lower case character`
-    );
+    showError(input, `${getFieldName(input)} must contain one lower case character`);
     return;
   }
   count = input.value.match(reUpperCase);
   if (count === undefined || count === null || count.length === 0) {
-    showError(
-      input,
-      `${getFieldName(input)} must contain one upper case character`
-    );
+    showError(input, `${getFieldName(input)} must contain one upper case character`);
     return;
   }
   count = input.value.match(reDigit);

@@ -2,9 +2,9 @@ const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
-const symbol = document.getElementById("symbol");
+const symbol = document.getElementById('symbol');
 const movieSelect = document.getElementById('movie');
-const currencySelect = document.getElementById("currency");
+const currencySelect = document.getElementById('currency');
 
 populateUI();
 
@@ -18,7 +18,7 @@ function calculate() {
     updateSelectedCount(1, currency);
   } else {
     // https://www.exchangerate-api.com/docs/free
-    fetch("https://open.er-api.com/v6/latest/USD")
+    fetch('https://open.er-api.com/v6/latest/USD')
       .then((res) => res.json())
       .then((data) => {
         const rate = data.rates[currency];
@@ -27,14 +27,13 @@ function calculate() {
         for (i = 0; i < movieSelect.length; i++) {
           const option = movieSelect.options[i];
           const replacement = `${(rate * option.value).toFixed(2)} ${currency}`;
-          const text = option.innerText.replace(/\[(.+?)\]/g, "[" + replacement + "]");
+          const text = option.innerText.replace(/\[(.+?)\]/g, '[' + replacement + ']');
           option.innerText = text;
         }
         updateSelectedCount(rate, currency);
       });
   }
 }
-
 
 // Save selected movie index and price
 function setMovieData(movieIndex, moviePrice) {
@@ -46,7 +45,7 @@ function setMovieData(movieIndex, moviePrice) {
 function updateSelectedCount(rate, currencySymbol) {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
 
-  const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
+  const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
 
   localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
 
@@ -80,18 +79,15 @@ function populateUI() {
 currencySelect.addEventListener('change', calculate);
 
 // Movie select event
-movieSelect.addEventListener('change', e => {
+movieSelect.addEventListener('change', (e) => {
   ticketPrice = +e.target.value;
   setMovieData(e.target.selectedIndex, e.target.value);
   calculate();
 });
 
 // Seat click event
-container.addEventListener('click', e => {
-  if (
-    e.target.classList.contains('seat') &&
-    !e.target.classList.contains('occupied')
-  ) {
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
     e.target.classList.toggle('selected');
 
     calculate();

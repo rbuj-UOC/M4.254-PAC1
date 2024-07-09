@@ -3,7 +3,7 @@ const amountEl_one = document.getElementById('amount-one');
 const currencyEl_two = document.getElementById('currency-two');
 const amountEl_two = document.getElementById('amount-two');
 
-const errorEl = document.getElementById("error");
+const errorEl = document.getElementById('error');
 const rateEl = document.getElementById('rate');
 const swap = document.getElementById('swap');
 
@@ -19,16 +19,16 @@ function calculate() {
   showError('');
 
   if (amountEl_one.value < 0) {
-    showError("Error: The amount must be positive");
+    showError('Error: The amount must be positive');
   } else {
-    rateEl.innerText = "loading...";
+    rateEl.innerText = 'loading...';
 
     // https://www.exchangerate-api.com/docs/free
     fetch(`https://open.er-api.com/v6/latest/${currency_one}`)
       .then((res) => res.json())
       .then((data) => {
-        if (data.result === "error") {
-          showError(`Error: ${data["error-type"]}`);
+        if (data.result === 'error') {
+          showError(`Error: ${data['error-type']}`);
         } else {
           // console.log(data);
           const rate = data.rates[currency_two];
