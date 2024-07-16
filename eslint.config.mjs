@@ -1,5 +1,6 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   {
@@ -12,5 +13,6 @@ export default [
       semi: 'error'
     }
   },
-  pluginJs.configs.recommended
+  pluginJs.configs.recommended,
+  eslintConfigPrettier,
 ];
